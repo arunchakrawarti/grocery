@@ -17,6 +17,7 @@ import SellerLogin from './components/seller/SellerLogin'
 import AddProduct from './pages/seller/AddProduct'
 import ProductList from './pages/seller/ProductList'
 import Orders from './pages/seller/Orders'
+import PageNotFound from './pages/PageNotFound'
 
 const App = () => {
   const {isSeller,showUserLogin} = useContext(AppContext);
@@ -41,6 +42,7 @@ const App = () => {
           <Route index element={isSeller?<AddProduct/>:null}/>
           <Route path='product-list' element={isSeller?<ProductList/>:null}/>
           <Route path='orders' element={isSeller?<Orders/>:null}/>
+          <Route path='*' element={<PageNotFound/>}/>
         </Route>
       </Routes>
      </div>
