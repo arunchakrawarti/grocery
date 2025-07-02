@@ -42,8 +42,8 @@ const App = () => {
           <Route index element={isSeller?<AddProduct/>:null}/>
           <Route path='product-list' element={isSeller?<ProductList/>:null}/>
           <Route path='orders' element={isSeller?<Orders/>:null}/>
-          <Route path='*' element={<PageNotFound/>}/>
         </Route>
+          <Route path='*' element={<PageNotFound/>}/>
       </Routes>
      </div>
      {isSellerPath?null:<Footer/>}
