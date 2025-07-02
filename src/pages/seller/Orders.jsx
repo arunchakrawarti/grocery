@@ -9,7 +9,7 @@ const Orders = () => {
    
   const fetchOrders=async()=>{
     try {
-        const {data} = await axios.get(`http://localhost:5000/api/order/seller`);
+        const {data} = await axios.get(`https://grocery-backend-nrbj.onrender.com/api/order/seller`);
         if(data.success){
             setOrders(data.orders);
         }
@@ -30,7 +30,7 @@ const Orders = () => {
             {orders.map((order, index) => (
                 <div key={index} className="flex flex-col md:grid md:grid-cols-[2fr_1fr_1fr_1fr] md:items-center gap-5 p-5 max-w-4xl rounded-md border border-gray-300 text-gray-800">
                     <div className="flex gap-5">
-                        <img className="w-12 h-12 object-cover opacity-60" src={`http://localhost:5000/images/${order.items[0].product.image[0]}`} alt="boxIcon" />
+                        <img className="w-12 h-12 object-cover opacity-60" src={`https://grocery-backend-nrbj.onrender.com/images/${order.items[0].product.image[0]}`} alt="boxIcon" />
                         <>
                             {order.items.map((item, index) => (
                                 <div key={index} className="flex flex-col justify-center">

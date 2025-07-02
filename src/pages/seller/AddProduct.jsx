@@ -33,7 +33,7 @@ const AddProduct = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/product/add-product", formData, {
+      const res = await axios.post("https://grocery-backend-nrbj.onrender.com/api/product/add-product", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

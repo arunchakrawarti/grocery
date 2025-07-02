@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 import axios from 'axios';
 
 axios.defaults.withCredentials = true; // ✅ Add this here
-axios.defaults.baseURL = import.meta.env.VITE_CLIENT_URL || "http://localhost:5000";
+axios.defaults.baseURL = import.meta.env.VITE_CLIENT_URL || "https://grocery-backend-nrbj.onrender.com";
 
 export const AppContext = createContext(null);
 
@@ -33,7 +33,7 @@ const AppContextProvider = ({ children}) =>{
     //chek seller status
     const fetchSeller = async()=>{
         try {
-            const {data} = await axios.get('http://localhost:5000/api/seller/is-auth')
+            const {data} = await axios.get('https://grocery-backend-nrbj.onrender.com/api/seller/is-auth')
             if(data.success){
                 setIsSeller(true)
             }
@@ -49,7 +49,7 @@ const AppContextProvider = ({ children}) =>{
 
     const fetchUser=async()=>{
         try {
-            const {data} = await axios.get(`http://localhost:5000/api/user/is-auth`)
+            const {data} = await axios.get(`https://grocery-backend-nrbj.onrender.com/api/user/is-auth`)
             if(data.success){
                 setUser(data.user)
                 setCartItems(data.user.cart)
@@ -65,7 +65,7 @@ const AppContextProvider = ({ children}) =>{
     //fetch all products data
     const fetchProducts = async()=>{
      try {
-        const {data} = await axios.get('http://localhost:5000/api/product/list')
+        const {data} = await axios.get('https://grocery-backend-nrbj.onrender.com/api/product/list')
 
         if(data.success){
             setProducts(data.products)
@@ -138,7 +138,7 @@ const AppContextProvider = ({ children}) =>{
  useEffect(()=>{
    const updateCart = async()=>{
     try {
-        const {data} = await axios.post(`http://localhost:5000/api/cart/update`,{cartItems})
+        const {data} = await axios.post(`https://grocery-backend-nrbj.onrender.com/api/cart/update`,{cartItems})
         if(!data.success){
             toast.error(data.message)
         }

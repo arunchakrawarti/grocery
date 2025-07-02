@@ -9,7 +9,7 @@ const MyOrders = () => {
   const {axios,user} = useContext(AppContext);
   const fetchOrders = async()=>{
     try {
-      const {data} = await axios.get(`http://localhost:5000/api/order/user`);
+      const {data} = await axios.get(`https://grocery-backend-nrbj.onrender.com/api/order/user`);
       if(data.success){
         setMyOrders(data.orders);
       }
@@ -43,7 +43,7 @@ const MyOrders = () => {
             <div key={index} className={`relative bg-white text-gray-800/70 ${order.items.length != index+1 && "border-b"} border-gray-300 flex flex-col md:flex-row md:item-center justify-between p-4 py-5 w-full max-w-4xl`}>
               <div className='flex items-center mb-4 md:mb-0'>
                 <div className='p-4 rounded-lg'>
-                  <img src={`http://localhost:5000/images/${item.product.image[0]}`} alt="" className='w-16 h-16' />
+                  <img src={`https://grocery-backend-nrbj.onrender.com/images/${item.product.image[0]}`} alt="" className='w-16 h-16' />
                 </div>
                 <div className='ml-4'>
                   <h2 className='text-xl font-medium'>{item.product.name}</h2>

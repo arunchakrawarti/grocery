@@ -10,7 +10,7 @@ const ProductList = () => {
 
     const toggleStock = async(id,inStock)=>{
         try {
-            const {data} = await axios.post('http://localhost:5000/api/product/stock',{id,inStock})
+            const {data} = await axios.post('https://grocery-backend-nrbj.onrender.com/api/product/stock',{id,inStock})
             if(data.success){
              fetchProducts();
              toast.success(data.message)
@@ -43,7 +43,7 @@ const ProductList = () => {
                                 <tr key={product._id} className="border-t border-gray-500/20">
                                     <td className="md:px-4 pl-2 md:pl-4 py-3 flex items-center space-x-3 truncate">
                                         <div className="border border-gray-300 rounded p-2">
-                                            <img src={`http://localhost:5000/images/${product.image[0]}`} alt="Product" className="w-16" />
+                                            <img src={`https://grocery-backend-nrbj.onrender.com/images/${product.image[0]}`} alt="Product" className="w-16" />
                                         </div>
                                         <span className="truncate max-sm:hidden w-full">{product.name}</span>
                                     </td>

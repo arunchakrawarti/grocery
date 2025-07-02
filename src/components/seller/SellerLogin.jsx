@@ -15,7 +15,7 @@ const SellerLogin = () => {
      const submitHandler = async(e)=>{
        e.preventDefault();
        try {
-         const {data} = await axios.post('http://localhost:5000/api/seller/login',{email,password});
+         const {data} = await axios.post('https://grocery-backend-nrbj.onrender.com/api/seller/login',{email,password});
          if(data.success){
           setIsSeller(true);
           navigate('/seller');

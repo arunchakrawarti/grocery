@@ -35,7 +35,7 @@ const Cart = () => {
 
     const getAddress = async()=>{
         try {
-            const {data} = await axios.get(`http://localhost:5000/api/address/get`)
+            const {data} = await axios.get(`https://grocery-backend-nrbj.onrender.com/api/address/get`)
             if(data.success){
                 setAddress(data.addresses)
                 if(data.addresses.length>0){
@@ -67,7 +67,7 @@ const Cart = () => {
                 return toast.error('please select an address')
             }
             if(paymentOption==='COD'){
-               const {data} = await axios.post(`http://localhost:5000/api/order/cod`,{
+               const {data} = await axios.post(`https://grocery-backend-nrbj.onrender.com/api/order/cod`,{
                items:cartArray.map((item)=>({
                  product:item._id,
                  quantity:item.quantity
@@ -108,7 +108,7 @@ const Cart = () => {
                                 navigate(`/product/${product.category.toLowerCase()}/${product._id}`);
                                 scrollTo(0, 0);
                             }} className="cursor-pointer w-24 h-24 flex items-center justify-center border border-gray-300 rounded">
-                                <img className="max-w-full h-full object-cover" src={`http://localhost:5000/images/${product.image[0]}`} alt={product.name} />
+                                <img className="max-w-full h-full object-cover" src={`https://grocery-backend-nrbj.onrender.com/images/${product.image[0]}`} alt={product.name} />
                             </div>
                             <div>
                                 <p className="hidden md:block font-semibold">{product.name}</p>

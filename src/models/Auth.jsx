@@ -12,7 +12,7 @@ const Auth = () => {
     const submitHandler = async(e)=>{
        try {
          e.preventDefault();
-         const {data} = await axios.post(`http://localhost:5000/api/user/${state}`,{
+         const {data} = await axios.post(`https://grocery-backend-nrbj.onrender.com/api/user/${state}`,{
             name,
             email,
             password

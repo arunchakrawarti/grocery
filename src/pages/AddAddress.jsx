@@ -23,7 +23,7 @@ const AddAddress = () => {
     const submitHandle=async(e)=>{
        try {
          e.preventDefault();
-         const {data} = await axios.post(`http://localhost:5000/api/address/add`,{address})
+         const {data} = await axios.post(`https://grocery-backend-nrbj.onrender.com/api/address/add`,{address})
          console.log(address)
          if(data.success){
           toast.success(data.message);
